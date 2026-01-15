@@ -18,7 +18,7 @@
 - supplies current + voltage to motors
 
 
-## Where Do I write Code?
+## Where Do I write Code? How do I run it?
 
 This may look overly complex with a bunch of random files, but to write/run code, follow these steps:
 
