@@ -18,6 +18,11 @@
 - supplies current + voltage to motors
 
 
+## Where Do I write Code?
+
+Write all code in nodes in: 203ROS_WS/main_pkg/main_pkg
+
+
 
 ## ROS2 Installation guide (Windows)
 1) Install WSL2 + Ubuntu 22.04
