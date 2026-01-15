@@ -27,16 +27,23 @@ ex. Make a file(node) called mynode.py in this directory
 
 ### 2) Make sure all dependencies for you code are in package.xml in the directory 203ROS_WS/main_pkg/package.xml
 ex. adding rclpy, std_msgs dependencies to package.xml\
+
+```
 <exec_depend>rclpy</exec_depend>\
 <exec_depend>std_msgs</exec_depend>
+```
 
 ### 3) Add entry point for you written code to setup.py in the directory 203ROS_WS/main_pkg/setup.py
-ex. adding entry point called liam_node for the mynode.py file\
+ex. adding entry point called liam_node for the mynode.py
+
+```
+file\
 entry_points={\
         'console_scripts': [\
                 'liam_node = main_pkg.mynode:main',\
         ],\
 },
+```
 
 This set sthe main function, found in the mynode file in the main_pkg directory as the code to run when the now named 'liam_node' is called
 
@@ -44,7 +51,7 @@ This set sthe main function, found in the mynode file in the main_pkg directory 
 Go to 203ROS_WS,
 
 In the terminal:\
-rosdep install -i --from-path src --rosdistro humble -y
+`rosdep install -i --from-path src --rosdistro humble -y`
 
 This ensures all dependencies your code required are present
 
@@ -52,18 +59,18 @@ This ensures all dependencies your code required are present
 While in 203ROS_WS,
 
 In terminal:\
-colcon build --packages-select main_pkg
+`colcon build --packages-select main_pkg`
 
 ### 6) Source the setup files
 Open new terminal and write:\
-source install/setup.bash
+`source install/setup.bash`
 
 ### 7) run nodes
 In the same new terminal run:\
-ros2 run main_pkg <nodeName>
+`ros2 run main_pkg <nodeName>`
 
 ex. running liam_node\
-ros2 run main_pkg liam_node
+`ros2 run main_pkg liam_node`
 
 
 
@@ -72,7 +79,7 @@ ros2 run main_pkg liam_node
 
 Open PowerShell as Administrator and run:
 
-wsl --install -d Ubuntu-22.04
+`wsl --install -d Ubuntu-22.04`
 
 Reboot if prompted.
 
@@ -80,7 +87,7 @@ Then open Ubuntu 22.04 from the Start Menu and create your Linux username + pass
 
 Check you’re on WSL2:
 
-wsl -l -v
+`wsl -l -v`
 
 You should see Ubuntu-22.04 with VERSION 2.
 
@@ -88,33 +95,38 @@ You should see Ubuntu-22.04 with VERSION 2.
 
 In the Ubuntu (WSL) terminal:
 
-sudo apt update && sudo apt upgrade -y
+s`udo apt update && sudo apt upgrade -y`
 
 
 Install some common tools:
 
-sudo apt install -y curl gnupg2 lsb-release software-properties-common
+`sudo apt install -y curl gnupg2 lsb-release software-properties-common`
 
 3) Add the ROS 2 apt repository (official)
 
 Set locale (avoids weird install issues):
 
+```
 sudo apt install -y locales
 sudo locale-gen en_US en_US.UTF-8
 sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 export LANG=en_US.UTF-8
+```
 
 
 Add the ROS key + repository:
 
+```
 sudo mkdir -p /etc/apt/keyrings
 curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key \
   | sudo gpg --dearmor -o /etc/apt/keyrings/ros-archive-keyring.gpg
+```
 
+```
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/ros-archive-keyring.gpg] \
 http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" \
 | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
-
+```
 
 Update apt:
 
@@ -124,32 +136,32 @@ sudo apt update
 
 Recommended full desktop install:
 
-sudo apt install -y ros-humble-desktop
+`sudo apt install -y ros-humble-desktop`
 
 
 Also install build tools you’ll likely need for a workspace:
 
-sudo apt install -y python3-colcon-common-extensions python3-rosdep python3-vcstool git
+`sudo apt install -y python3-colcon-common-extensions python3-rosdep python3-vcstool git`
 
 
 Initialize rosdep:
 
-sudo rosdep init
-rosdep update
+`sudo rosdep init`
+`rosdep update`
 
 5) Source ROS automatically in new terminals
 
 Add to your ~/.bashrc:
 
-echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
-source ~/.bashrc
+`echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc`
+`source ~/.bashrc`
 
 6) Quick verification (ROS tools)
 
 Run:
 
-ros2 --version
-ros2 pkg list | head
+`ros2 --version`
+`ros2 pkg list | head`
 
 
 If that works, ROS is installed.
