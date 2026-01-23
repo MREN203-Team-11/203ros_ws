@@ -169,7 +169,11 @@ If that works, ROS is installed.
 
 ### ROS2 Humble Docs: https://docs.ros.org/en/humble/index.html https://ros2-tutorial.readthedocs.io 
 
+### Pi Details
+host name: group11-pi
+Username: group11
+Password: tronisgoated
 
-NOTES:
+### NOTES:
 When searching for IP address: 192.168.137
 slam toolbox library for slam
