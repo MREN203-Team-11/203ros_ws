@@ -1,3 +1,10 @@
+# SSH
+
+### IP Address: 192.168.50.203
+##### Need to be on MREN203 wifi
+##### When closing ssh terminal, run `sudo shutdown now`
+
+
 # Initial Design Ideas
 
 ### Pi 4 (Robot Brain)
