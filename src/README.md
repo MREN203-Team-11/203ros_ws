@@ -5,6 +5,7 @@
 ##### When closing ssh terminal, run `sudo shutdown now`
 
 
+
 # Initial Design Ideas
 
 ### Pi 4 (Robot Brain)
@@ -23,20 +24,6 @@
 ### Motor Driver
 - takes PWM + digital direction signals
 - supplies current + voltage to motors
-
-## workspace structure
-
-### src/main_pkg/main_pkg
-This is where you write python nodes
-
-### src/main_pkg/launch
-This is where the launch file is
-
-### src/main_pkg/config
-This is where the parameter yaml file is
-
-### src/main_pkg/urdf
-This is where the urdf file describing the robot is
 
 
 ## Where Do I write Code? How do I run it?
@@ -189,3 +176,13 @@ If that works, ROS is installed.
 
 
 ### ROS2 Humble Docs: https://docs.ros.org/en/humble/index.html https://ros2-tutorial.readthedocs.io 
+
+### Pi Details
+host name: group11-pi 
+
+Username: group11
+
+Password: tronisgoated
+
+### NOTES:
+slam toolbox library for slam
