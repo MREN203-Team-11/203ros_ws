@@ -1,5 +1,7 @@
 # SSH
 
+`ssh group11@192.168.50.203`
+
 ### IP Address: 192.168.50.203
 ##### Need to be on MREN203 wifi
 ##### When closing ssh terminal, run `sudo shutdown now`
