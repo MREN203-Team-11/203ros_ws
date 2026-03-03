@@ -1,0 +1,37 @@
+[0.500s] Invoking command in '/home/stedjof/203ros_ws/src/main_pkg': PYTHONPATH=/home/stedjof/203ros_ws/build/main_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/stedjof/203ros_ws/install/main_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/main_pkg build --build-base /home/stedjof/203ros_ws/build/main_pkg/build install --record /home/stedjof/203ros_ws/build/main_pkg/install.log --single-version-externally-managed install_data
+[0.632s] running egg_info
+[0.632s] creating ../../build/main_pkg/main_pkg.egg-info
+[0.633s] writing ../../build/main_pkg/main_pkg.egg-info/PKG-INFO
+[0.633s] writing dependency_links to ../../build/main_pkg/main_pkg.egg-info/dependency_links.txt
+[0.633s] writing entry points to ../../build/main_pkg/main_pkg.egg-info/entry_points.txt
+[0.633s] writing requirements to ../../build/main_pkg/main_pkg.egg-info/requires.txt
+[0.633s] writing top-level names to ../../build/main_pkg/main_pkg.egg-info/top_level.txt
+[0.635s] writing manifest file '../../build/main_pkg/main_pkg.egg-info/SOURCES.txt'
+[0.636s] reading manifest file '../../build/main_pkg/main_pkg.egg-info/SOURCES.txt'
+[0.636s] adding license file 'LICENSE'
+[0.636s] writing manifest file '../../build/main_pkg/main_pkg.egg-info/SOURCES.txt'
+[0.637s] running build
+[0.637s] running build_py
+[0.637s] creating /home/stedjof/203ros_ws/build/main_pkg/build
+[0.637s] creating /home/stedjof/203ros_ws/build/main_pkg/build/lib
+[0.638s] creating /home/stedjof/203ros_ws/build/main_pkg/build/lib/main_pkg
+[0.638s] copying main_pkg/__init__.py -> /home/stedjof/203ros_ws/build/main_pkg/build/lib/main_pkg
+[0.638s] copying main_pkg/send_message.py -> /home/stedjof/203ros_ws/build/main_pkg/build/lib/main_pkg
+[0.638s] running install
+[0.638s] running install_lib
+[0.639s] creating /home/stedjof/203ros_ws/install/main_pkg/lib/python3.10/site-packages/main_pkg
+[0.639s] copying /home/stedjof/203ros_ws/build/main_pkg/build/lib/main_pkg/__init__.py -> /home/stedjof/203ros_ws/install/main_pkg/lib/python3.10/site-packages/main_pkg
+[0.639s] copying /home/stedjof/203ros_ws/build/main_pkg/build/lib/main_pkg/send_message.py -> /home/stedjof/203ros_ws/install/main_pkg/lib/python3.10/site-packages/main_pkg
+[0.639s] byte-compiling /home/stedjof/203ros_ws/install/main_pkg/lib/python3.10/site-packages/main_pkg/__init__.py to __init__.cpython-310.pyc
+[0.639s] byte-compiling /home/stedjof/203ros_ws/install/main_pkg/lib/python3.10/site-packages/main_pkg/send_message.py to send_message.cpython-310.pyc
+[0.640s] running install_data
+[0.640s] creating /home/stedjof/203ros_ws/install/main_pkg/share/ament_index
+[0.640s] creating /home/stedjof/203ros_ws/install/main_pkg/share/ament_index/resource_index
+[0.640s] creating /home/stedjof/203ros_ws/install/main_pkg/share/ament_index/resource_index/packages
+[0.640s] copying resource/main_pkg -> /home/stedjof/203ros_ws/install/main_pkg/share/ament_index/resource_index/packages
+[0.641s] copying package.xml -> /home/stedjof/203ros_ws/install/main_pkg/share/main_pkg
+[0.641s] running install_egg_info
+[0.642s] Copying ../../build/main_pkg/main_pkg.egg-info to /home/stedjof/203ros_ws/install/main_pkg/lib/python3.10/site-packages/main_pkg-0.0.0-py3.10.egg-info
+[0.642s] running install_scripts
+[0.654s] writing list of installed files to '/home/stedjof/203ros_ws/build/main_pkg/install.log'
+[0.665s] Invoked command in '/home/stedjof/203ros_ws/src/main_pkg' returned '0': PYTHONPATH=/home/stedjof/203ros_ws/build/main_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/stedjof/203ros_ws/install/main_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/main_pkg build --build-base /home/stedjof/203ros_ws/build/main_pkg/build install --record /home/stedjof/203ros_ws/build/main_pkg/install.log --single-version-externally-managed install_data

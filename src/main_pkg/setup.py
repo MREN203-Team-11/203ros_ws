@@ -24,6 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'send_message = main_pkg.send_message:main'
         ],
     },
 )
