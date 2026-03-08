@@ -6,7 +6,7 @@
 ##### Need to be on MREN203 wifi
 ##### When closing ssh terminal, run `sudo shutdown now`
 
-## Visulazing robot
+## Visualizing robot
 
 1) In the terminal: `colcon build --symlink-install`
 
