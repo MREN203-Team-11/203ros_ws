@@ -8,7 +8,7 @@
 
 ## Visualizing robot
 
-Run `rviz2 -d src/main_pkg/config/view_bot.rviz`
+Run `ros2 launch main_pkg view_robot.launch.py`
 
 
 ## Where Do I write Code? How do I run it?
