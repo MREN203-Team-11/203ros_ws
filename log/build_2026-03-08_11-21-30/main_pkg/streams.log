@@ -1,0 +1,30 @@
+[60.069s] Invoking command in '/home/liam/203ros_ws/build/main_pkg': PYTHONPATH=/home/liam/203ros_ws/build/main_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/liam/203ros_ws/install/main_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/liam/203ros_ws/build/main_pkg/build --no-deps symlink_data
+[60.247s] running develop
+[60.343s] running egg_info
+[60.343s] creating main_pkg.egg-info
+[60.343s] writing main_pkg.egg-info/PKG-INFO
+[60.343s] writing dependency_links to main_pkg.egg-info/dependency_links.txt
+[60.343s] writing entry points to main_pkg.egg-info/entry_points.txt
+[60.343s] writing requirements to main_pkg.egg-info/requires.txt
+[60.343s] writing top-level names to main_pkg.egg-info/top_level.txt
+[60.343s] writing manifest file 'main_pkg.egg-info/SOURCES.txt'
+[60.344s] reading manifest file 'main_pkg.egg-info/SOURCES.txt'
+[60.344s] writing manifest file 'main_pkg.egg-info/SOURCES.txt'
+[60.345s] running build_ext
+[60.345s] Creating /home/liam/203ros_ws/install/main_pkg/lib/python3.10/site-packages/main-pkg.egg-link (link to .)
+[60.346s] 
+[60.346s] Installed /home/liam/203ros_ws/build/main_pkg
+[60.346s] running symlink_data
+[60.346s] creating /home/liam/203ros_ws/install/main_pkg/share/ament_index
+[60.346s] creating /home/liam/203ros_ws/install/main_pkg/share/ament_index/resource_index
+[60.346s] creating /home/liam/203ros_ws/install/main_pkg/share/ament_index/resource_index/packages
+[60.346s] symbolically linking /home/liam/203ros_ws/build/main_pkg/resource/main_pkg -> /home/liam/203ros_ws/install/main_pkg/share/ament_index/resource_index/packages
+[60.346s] symbolically linking /home/liam/203ros_ws/build/main_pkg/package.xml -> /home/liam/203ros_ws/install/main_pkg/share/main_pkg
+[60.346s] creating /home/liam/203ros_ws/install/main_pkg/share/main_pkg/launch
+[60.346s] symbolically linking /home/liam/203ros_ws/build/main_pkg/launch/view_robot.launch.py -> /home/liam/203ros_ws/install/main_pkg/share/main_pkg/launch
+[60.346s] creating /home/liam/203ros_ws/install/main_pkg/share/main_pkg/description
+[60.346s] symbolically linking /home/liam/203ros_ws/build/main_pkg/description/robot.urdf.xacro -> /home/liam/203ros_ws/install/main_pkg/share/main_pkg/description
+[60.346s] symbolically linking /home/liam/203ros_ws/build/main_pkg/description/robot_core.xacro -> /home/liam/203ros_ws/install/main_pkg/share/main_pkg/description
+[60.346s] creating /home/liam/203ros_ws/install/main_pkg/share/main_pkg/config
+[60.346s] symbolically linking /home/liam/203ros_ws/build/main_pkg/config/robot_parameters.yaml -> /home/liam/203ros_ws/install/main_pkg/share/main_pkg/config
+[60.364s] Invoked command in '/home/liam/203ros_ws/build/main_pkg' returned '0': PYTHONPATH=/home/liam/203ros_ws/build/main_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/liam/203ros_ws/install/main_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/liam/203ros_ws/build/main_pkg/build --no-deps symlink_data
