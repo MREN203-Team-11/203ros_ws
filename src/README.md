@@ -8,20 +8,7 @@
 
 ## Visualizing robot
 
-1) In the terminal: `colcon build --symlink-install`
-
-2) In the terminal: `ros2 launch main_pkg view_robot.launch.py`
-
-3) RVIZ should open, click on whitespace next to ####fixed frame and choose ####base_link
-
-4) Click add in the bottom right corner
-
-5) Scroll down, select TF
-
-6) Click add, scroll down, select RobotModel
-
-7) Click RobotModel dropdown, and select /robot_description in whitespace next to Description Topic
-
+Run `rviz2 -d src/main_pkg/config/view_bot.rviz`
 
 
 ## Where Do I write Code? How do I run it?
