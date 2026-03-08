@@ -14,9 +14,11 @@ def generate_launch_description():
     xacro_file = os.path.join(pkg_share, "description", "robot.urdf.xacro")
 
     robot_description = xacro.process_file(xacro_file).toxml()
+    default_rviz_config = os.path.join(pkg_share, "config", "view_bot.rviz")
 
     use_joint_state_publisher_gui = LaunchConfiguration("use_joint_state_publisher_gui")
     use_rviz = LaunchConfiguration("use_rviz")
+    rviz_config = LaunchConfiguration("rviz_config")
 
     declare_jsp_gui = DeclareLaunchArgument(
         "use_joint_state_publisher_gui",
@@ -28,6 +30,12 @@ def generate_launch_description():
         "use_rviz",
         default_value="true",
         description="Start RViz2",
+    )
+
+    declare_rviz_config = DeclareLaunchArgument(
+        "rviz_config",
+        default_value=default_rviz_config,
+        description="Path to RViz2 config file",
     )
 
     robot_state_publisher_node = Node(
@@ -47,6 +55,7 @@ def generate_launch_description():
     rviz_node = Node(
         package="rviz2",
         executable="rviz2",
+        arguments=["-d", rviz_config],
         output="screen",
         condition=IfCondition(use_rviz),
     )
@@ -55,6 +64,7 @@ def generate_launch_description():
         [
             declare_jsp_gui,
             declare_use_rviz,
+            declare_rviz_config,
             robot_state_publisher_node,
             joint_state_publisher_gui_node,
             rviz_node,
