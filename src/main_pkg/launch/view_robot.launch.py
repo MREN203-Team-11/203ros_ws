@@ -19,6 +19,7 @@ def generate_launch_description():
     use_joint_state_publisher_gui = LaunchConfiguration("use_joint_state_publisher_gui")
     use_rviz = LaunchConfiguration("use_rviz")
     rviz_config = LaunchConfiguration("rviz_config")
+    use_sim_time = LaunchConfiguration("use_sim_time")
 
     declare_jsp_gui = DeclareLaunchArgument(
         "use_joint_state_publisher_gui",
@@ -38,17 +39,29 @@ def generate_launch_description():
         description="Path to RViz2 config file",
     )
 
+    declare_use_sim_time = DeclareLaunchArgument(
+        "use_sim_time",
+        default_value="false",
+        description="Use simulation clock (/clock)",
+    )
+
     robot_state_publisher_node = Node(
         package="robot_state_publisher",
         executable="robot_state_publisher",
         output="screen",
-        parameters=[{"robot_description": robot_description}],
+        parameters=[
+            {
+                "robot_description": robot_description,
+                "use_sim_time": use_sim_time,
+            }
+        ],
     )
 
     joint_state_publisher_gui_node = Node(
         package="joint_state_publisher_gui",
         executable="joint_state_publisher_gui",
         output="screen",
+        parameters=[{"use_sim_time": use_sim_time}],
         condition=IfCondition(use_joint_state_publisher_gui),
     )
 
@@ -65,6 +78,7 @@ def generate_launch_description():
             declare_jsp_gui,
             declare_use_rviz,
             declare_rviz_config,
+            declare_use_sim_time,
             robot_state_publisher_node,
             joint_state_publisher_gui_node,
             rviz_node,

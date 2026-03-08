@@ -6,6 +6,16 @@
 ##### Need to be on MREN203 wifi
 ##### When closing ssh terminal, run `sudo shutdown now`
 
+## Running Gazebo + Driving Robot
+
+1) Open Gazebo
+Run `ros2 launch main_pkg launch_sim.launch.py`
+
+2) Open another terminal
+Run `ros2 run teleop_twist_keyboard teleop_twist_keyboard`
+
+3) Use the commands outputted after running this, and note this terminal needs to be your active screen (the one you last clicked)
+
 ## Visualizing robot
 
 Run `ros2 launch main_pkg view_robot.launch.py`

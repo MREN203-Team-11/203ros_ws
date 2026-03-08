@@ -3,9 +3,11 @@ setup.cfg
 setup.py
 config/robot_parameters.yaml
 config/view_bot.rviz
+description/gazebo_control.xacro
 description/inertial_macros.xacro
 description/robot.urdf.xacro
 description/robot_core.xacro
+launch/launch_sim.launch.py
 launch/view_robot.launch.py
 main_pkg/__init__.py
 main_pkg.egg-info/PKG-INFO
