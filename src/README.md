@@ -11,6 +11,8 @@
 1) Open Gazebo
 Run `ros2 launch main_pkg launch_sim.launch.py`
 
+optional: add `world:=./src/main_pkg/worlds/obstacles.world` to end of command if you want to run in a obstacles.world, replace this with any other world you want to run the sim in.
+
 2) Open another terminal
 Run `ros2 run teleop_twist_keyboard teleop_twist_keyboard`
 
