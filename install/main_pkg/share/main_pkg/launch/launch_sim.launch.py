@@ -1,1 +1,0 @@
-/home/liam/203ros_ws/build/main_pkg/launch/launch_sim.launch.py
