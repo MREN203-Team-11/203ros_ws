@@ -5,6 +5,7 @@ config/robot_parameters.yaml
 config/view_bot.rviz
 description/gazebo_control.xacro
 description/inertial_macros.xacro
+description/lidar.xacro
 description/robot.urdf.xacro
 description/robot_core.xacro
 launch/launch_sim.launch.py
