@@ -1,4 +1,17 @@
-.vscode/*.db
-.vscode/*.db-shm
-.vscode/*.db-wal
+# ROS / Colcon build artifacts
+build/
+install/
+log/
+
+# Colcon metadata
+.colcon/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# VSCode
 .vscode/
+
+# OS files
+.DS_Store
