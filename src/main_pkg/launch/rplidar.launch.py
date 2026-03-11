@@ -7,6 +7,10 @@ def generate_launch_description():
 
     return LaunchDescription([
 
+
+
+        # THIS DOESN'T WORK YET, Work in progress
+
         Node(
             package='rplidar_ros',
             executable='rplidar_composition',
