@@ -2,7 +2,7 @@
 <robot name="mars_rover" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
     <gazebo>
-        <plugin name="skid_steer_drive" filename="libgazebo_ros_diff_drive.so">
+        <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so">
 
             <!-- Wheel Information -->
             <num_wheel_pairs>2</num_wheel_pairs>
