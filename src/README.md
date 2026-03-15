@@ -6,6 +6,26 @@
 ##### Need to be on MREN203 wifi
 ##### When closing ssh terminal, run `sudo shutdown now`
 
+## Viewing Lidar data
+
+1) Run `ros2 launch main_pkg rplidar.launch.py`
+
+2) Open rviz
+
+run `rviz2`
+
+3) Click add -> laser scan, set the topic to /scan
+
+4) Type "laser_frame" in the fixed frame box
+
+Note:
+
+Stop lidar `ros2 service call /stop_motor std_srvs/srv/Empty {}`
+
+Start lidar `ros2 service call /start_motor std_srvs/srv/Empty {}`
+
+If the node is being weird run `killall rplidar_composition` to kill the lidar node
+
 ## Running Gazebo + Driving Robot
 
 1) Open Gazebo
