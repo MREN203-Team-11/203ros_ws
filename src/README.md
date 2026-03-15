@@ -8,9 +8,9 @@
 
 ## Viewing Lidar data
 
-1) Run `ros2 launch main_pkg rplidar.launch.py`
+1) ON THE PI Run `ros2 launch main_pkg rplidar.launch.py`
 
-2) Open rviz
+2) ON YOUR PC Open rviz
 
 run `rviz2`
 
