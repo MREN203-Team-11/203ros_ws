@@ -29,6 +29,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'gui = main_pkg.gui:main',
+            'driver = main_pkg.driver:main',
         ],
     },
 )
