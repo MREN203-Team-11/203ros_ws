@@ -29,8 +29,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'gui = main_pkg.gui:main',
-            'driver = main_pkg.driver:main',
+            'motor_serial_node = main_pkg.motor_serial_node:main',
         ],
     },
 )

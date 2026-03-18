@@ -1,7 +1,4 @@
 driver:
   ros__parameters:
-    encoder_cpr: 3000 # Not sure if this is right
-    loop_rate: 30
     serial_port: /dev/ttyUSB0
-    baud_rate: 57600
-    serial_debug: false
+    baud_rate: 115200
