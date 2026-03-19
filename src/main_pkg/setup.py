@@ -16,7 +16,7 @@ setup(
         ('share/' + package_name + '/description', glob('description/*')),
         ('share/' + package_name + '/config', glob('config/*')),
     ],
-    install_requires=['setuptools'],
+    install_requires=['setuptools', 'pyserial'],
     zip_safe=True,
     maintainer='liam',
     maintainer_email='liamshan13@gmail.com',

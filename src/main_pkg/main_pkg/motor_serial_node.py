@@ -12,26 +12,27 @@ class MotorSerialNode(Node):
 
         # Parameters
         self.declare_parameter('serial_port', '/dev/ttyUSB0')
-        self.declare_parameter('baudrate', 115200)
+        self.declare_parameter('baud_rate', 115200)
         self.declare_parameter('serial_read_rate', 100.0)
 
         serial_port = self.get_parameter('serial_port').value
-        baudrate = self.get_parameter('baudrate').value
-        serial_read_rate = self.get_parameter('serial_rate_rate', 100).value
+        baud_rate = self.get_parameter('baud_rate').value
+        serial_read_rate = self.get_parameter('serial_read_rate').value
 
         # Open serial connection
         try:
             self.ser = serial.Serial(
                 port=serial_port,
-                baudrate=baudrate,
-                timeout=0.0
+                baudrate=baud_rate,
+                timeout=0.05
             )
 
             time.sleep(2.0)
             self.ser.reset_input_buffer()
             self.ser.reset_output_buffer()
 
-            self.get_logger().info(f'Opened serial port {serial_port} at {baudrate} baud')
+            self.get_logger().info(f'Opened serial port {serial_port} at {baud_rate} baud')
+
         except serial.SerialException as e:
             self.get_logger().error(f'Failed to open serial port {serial_port}: {e}')
             raise
@@ -44,7 +45,14 @@ class MotorSerialNode(Node):
             10
         )
 
-        # Time to poll serial for encoder messages
+        # Publish encoder ticks 
+        self.encoder_pub = self.create_publisher(
+            EncoderTicks, 
+            '/encoder_ticks',
+            10
+        )
+
+        # Timer to poll serial for encoder messages
         self.serial_timer = self.create_timer(
             1.0 / serial_read_rate,
             self.read_serial_line
@@ -113,7 +121,7 @@ class MotorSerialNode(Node):
 
         except Exception as e:
             self.get_logger().error(f'Unexpected error while reading serial: {e}')
-            
+
 
     def destroy_node(self):
         if hasattr(self, 'ser') and self.ser.is_open:
