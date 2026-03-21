@@ -6,6 +6,16 @@
 ##### Need to be on MREN203 wifi
 ##### When closing ssh terminal, run `sudo shutdown now`
 
+## Running Motors through ROS
+
+1) Run in Pi terminal `ros2 run main_pkg motor_serial_node --ros-args --params-file src/main_pkg/config/robot_parameters.yaml`
+
+2) On computer run `ros2 topic pub /cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.5}, angular: {z: 0.0}}" -r 5`
+
+Note:
+Viewing topic messages
+`ros2 topic echo /topic_name`
+
 ## Viewing Lidar data
 
 1) ON THE PI Run `ros2 launch main_pkg rplidar.launch.py`
