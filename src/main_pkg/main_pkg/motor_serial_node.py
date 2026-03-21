@@ -11,7 +11,7 @@ class MotorSerialNode(Node):
         super().__init__('motor_serial_node')
 
         # Parameters
-        self.declare_parameter('serial_port', '/dev/ttyUSB0')
+        self.declare_parameter('serial_port', '/dev/ttyACM0')
         self.declare_parameter('baud_rate', 115200)
         self.declare_parameter('serial_read_rate', 100.0)
 
