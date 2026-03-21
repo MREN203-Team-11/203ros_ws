@@ -63,10 +63,11 @@ class MotorSerialNode(Node):
         angular_velocity = msg.angular.z
 
         command = f'CMD,{linear_velocity:.4f},{angular_velocity:.4f}\n'
+        
 
         try:
             self.ser.write(command.encode('utf-8'))
-            self.get_logger().debug(f'Sent: {command.strip()}')
+            self.get_logger().info(f'Sent: {command.strip()}')
         except serial.SerialException as e:
             self.get_logger().error(f'Failed to write to serial: {e}')
 
