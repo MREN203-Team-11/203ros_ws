@@ -84,6 +84,9 @@ class MotorSerialNode(Node):
             if not line:
                 return
             
+            if line:
+                self.get_logger().info(f"Arduino says: {line}")
+            
             # Ignore boot/debug lines that are not encoder packets
             if not line.startswith('ENC,'):
                 self.get_logger().debug(f'Ignored serial line: {line}')
