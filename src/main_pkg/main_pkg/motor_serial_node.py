@@ -67,13 +67,16 @@ class MotorSerialNode(Node):
 
         try:
             self.ser.write(command.encode('utf-8'))
+            self.ser.flush()
             self.get_logger().info(f'Sent: {command.strip()}')
         except serial.SerialException as e:
             self.get_logger().error(f'Failed to write to serial: {e}')
 
     def read_serial_line(self) -> None:
         try:
-            if self.ser.in_waiting <= 0:
+            waiting = self.ser.in_waiting
+            self.get_logger().info(f'in_waiting={waiting}')
+            if waiting <= 0:
                 return
             
             raw_line = self.ser.readline()
