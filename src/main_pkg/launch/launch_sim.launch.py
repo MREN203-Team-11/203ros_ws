@@ -24,6 +24,7 @@ def generate_launch_description():
                 )]),
                 launch_arguments={
                     'use_sim_time': 'true',
+                    'use_ros2_control': 'true',
                     'use_rviz': 'false',
                     'use_joint_state_publisher_gui': 'false',
                 }.items()
