@@ -9,6 +9,7 @@ def generate_launch_description():
 
     robot_params = os.path.join(pkg_share, 'config', 'robot_parameters.yaml')
     teleop_params = os.path.join(pkg_share, 'config', 'teleop_joy.yaml')
+    odom_params = os.path.join(pkg_share, 'config', 'odometry_parameters.yaml')
 
     return LaunchDescription([
         Node(
@@ -37,5 +38,13 @@ def generate_launch_description():
             name='motor_serial_node',
             output='screen',
             parameters=[robot_params]
+        ),
+
+        Node(
+            package='main_pkg',
+            executable='odometry_node',
+            name='odometry_node',
+            output='screen',
+            parameters=[odom_params]
         ),
     ])
