@@ -3,9 +3,12 @@ teleop_twist_joy_node:
     require_enable_button: true  # robot will not move unless LB is held
 
     axis_linear.x: 1  # left stick
-    scale_linear.x: 2
+    scale_linear.x: 0.3
+    scale_linear_turbo.x: 0.6
 
     axis_angular.yaw: 3  # right stick
-    scale_angular.yaw: 2
+    scale_angular.yaw: 1.2 
+    scale_angular_turbo.yaw: 2.0
 
     enable_button: 4    # LB
+    turbo_button: 5     # RB, hold for turbo mode
