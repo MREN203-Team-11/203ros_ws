@@ -6,6 +6,12 @@
 ##### Need to be on MREN203 wifi
 ##### When closing ssh terminal, run `sudo shutdown now`
 
+## Running SLAM toolbox
+
+run `ros2 launch slam_toolbox online_async_launch.py params_file:=./src/main_pkg/config/mapper_params_online_async.yaml`
+
+in rviz, insert map, select /map topic
+
 ## Driving the robot with the gamepad
 
 run `ros2 lauch main_pkg teleop_motor.launch.py`
