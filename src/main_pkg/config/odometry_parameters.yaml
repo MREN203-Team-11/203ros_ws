@@ -1,0 +1,10 @@
+odometry_node:
+  ros__parameters:
+    ticks_per_revolution: 3000
+    wheel_radius: 0.060325
+    wheel_base: 0.238125
+    odom_frame_id: odom
+    base_frame_id: base_link
+    encoder_topic: /encoder_ticks
+    odom_topic: /odom
+    publish_tf: true

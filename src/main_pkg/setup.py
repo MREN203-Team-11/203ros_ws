@@ -30,6 +30,7 @@ setup(
     entry_points={
         'console_scripts': [
             'motor_serial_node = main_pkg.motor_serial_node:main',
+            'odometry_node = main_pkg.odometry_node:main',
         ],
     },
 )
