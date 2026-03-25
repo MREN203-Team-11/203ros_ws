@@ -68,14 +68,14 @@ class MotorSerialNode(Node):
         try:
             self.ser.write(command.encode('utf-8'))
             self.ser.flush()
-            self.get_logger().info(f'Sent: {command.strip()}')
+            # self.get_logger().info(f'Sent: {command.strip()}')
         except serial.SerialException as e:
             self.get_logger().error(f'Failed to write to serial: {e}')
 
     def read_serial_line(self) -> None:
         try:
             waiting = self.ser.in_waiting
-            self.get_logger().info(f'in_waiting={waiting}')
+            # self.get_logger().info(f'in_waiting={waiting}')
             if waiting <= 0:
                 return
             
@@ -87,8 +87,8 @@ class MotorSerialNode(Node):
             if not line:
                 return
             
-            if line:
-                self.get_logger().info(f"Arduino says: {line}")
+            # if line:
+                # self.get_logger().info(f"Arduino says: {line}")
             
             # Ignore boot/debug lines that are not encoder packets
             if not line.startswith('ENC,'):
