@@ -9,6 +9,8 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     package_name = 'main_pkg'
+    pkg_share = get_package_share_directory(package_name)
+    teleop_params = os.path.join(pkg_share, 'config', 'teleop_joy.yaml')
 
     # Publish robot_description using the non-ros2_control xacro branch
     rsp = IncludeLaunchDescription(
@@ -51,8 +53,30 @@ def generate_launch_description():
         output='screen'
     )
 
+    joy_node = Node(
+        package='joy',
+        executable='joy_node',
+        name='joy_node',
+        output='screen',
+        parameters=[{
+            'device_id': 0,
+            'deadzone': 0.1,
+            'autorepeat_rate': 20.0,
+        }]
+    )
+
+    teleop_node = Node(
+        package='teleop_twist_joy',
+        executable='teleop_node',
+        name='teleop_twist_joy_node',
+        output='screen',
+        parameters=[teleop_params]
+    )
+
     return LaunchDescription([
         rsp,
         gazebo,
         spawn_entity,
+        joy_node,
+        teleop_node,
     ])

@@ -6,6 +6,12 @@
 ##### Need to be on MREN203 wifi
 ##### When closing ssh terminal, run `sudo shutdown now`
 
+## Driving the robot with the gamepad
+
+run `ros2 lauch main_pkg teleop_motor.launch.py`
+
+Make sure the gamepad is plugged into the pi, the pi and arduino are connected
+
 ## Running Motors through ROS
 
 1) Run in Pi terminal `ros2 run main_pkg motor_serial_node --ros-args --params-file src/main_pkg/config/robot_parameters.yaml`
@@ -43,10 +49,7 @@ Run `ros2 launch main_pkg launch_sim.launch.py`
 
 optional: add `world:=./src/main_pkg/worlds/obstacles.world` to end of command if you want to run in a obstacles.world, replace this with any other world you want to run the sim in.
 
-2) Open another terminal
-Run `ros2 run teleop_twist_keyboard teleop_twist_keyboard`
-
-3) Use the commands outputted after running this, and note this terminal needs to be your active screen (the one you last clicked)
+2) Plug the gamepad into your pc
 
 ## Visualizing robot
 
