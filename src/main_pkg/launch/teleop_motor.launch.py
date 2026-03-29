@@ -27,6 +27,16 @@ def generate_launch_description():
         rsp,
 
         Node(
+            package='joint_state_publisher',
+            executable='joint_state_publisher',
+            name='joint_state_publisher',
+            output='screen',
+            parameters=[{
+                'use_sim_time': False,
+            }]
+        ),
+
+        Node(
             package='joy',
             executable='joy_node',
             name='joy_node',
