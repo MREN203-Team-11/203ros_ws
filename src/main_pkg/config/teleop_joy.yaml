@@ -3,7 +3,7 @@ teleop_twist_joy_node:
     require_enable_button: true  # robot will not move unless LB is held
 
     axis_linear.x: 1  # left stick
-    scale_linear.x: 0.5
+    scale_linear.x: 1.0
 
     axis_angular.yaw: 3  # right stick # had .yaw before
     scale_angular.yaw: 3.0
