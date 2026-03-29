@@ -7,7 +7,8 @@ import os
 
 
 def generate_launch_description():
-    pkg_share = get_package_share_directory('main_pkg')
+    package_name = 'main_pkg'
+    pkg_share = get_package_share_directory(package_name)
 
     robot_params = os.path.join(pkg_share, 'config', 'robot_parameters.yaml')
     teleop_params = os.path.join(pkg_share, 'config', 'teleop_joy.yaml')
@@ -15,26 +16,20 @@ def generate_launch_description():
 
     rsp = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
-            os.path.join(pkg_share, 'launch', 'rsp.launch.py')
+            os.path.join(
+                get_package_share_directory(package_name),
+                'launch',
+                'rsp.launch.py'
+            )
         ]),
         launch_arguments={
-            'use_sim_time': 'false',
-            'use_ros2_control': 'true',
+            'use_sim_time': 'true',
+            'use_ros2_control': 'false',
         }.items()
     )
 
     return LaunchDescription([
         rsp,
-
-        Node(
-            package='joint_state_publisher',
-            executable='joint_state_publisher',
-            name='joint_state_publisher',
-            output='screen',
-            parameters=[{
-                'use_sim_time': False,
-            }]
-        ),
 
         Node(
             package='joy',
