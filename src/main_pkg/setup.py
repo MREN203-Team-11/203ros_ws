@@ -14,7 +14,7 @@ setup(
         ('share/' + package_name, ['package.xml']),
         ('share/' + package_name + '/launch', glob('launch/*.py')),
         ('share/' + package_name + '/description', glob('description/*')),
-        ('share/' + package_name + '/config', glob('config/*')),
+        ('share/' + package_name + '/config', glob('config/*.yaml')),
     ],
     install_requires=['setuptools', 'pyserial'],
     zip_safe=True,
