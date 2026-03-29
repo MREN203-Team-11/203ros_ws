@@ -23,13 +23,21 @@ def generate_launch_description():
             )
         ]),
         launch_arguments={
-            'use_sim_time': 'true',
-            'use_ros2_control': 'false',
+            'use_sim_time': 'false',
+            'use_ros2_control': 'true',
         }.items()
     )
 
     return LaunchDescription([
         rsp,
+
+        Node(
+            package='main_pkg',
+            executable='wheel_joint_state_node',
+            name='wheel_joint_state_node',
+            output='screen',
+            parameters=[odom_params]
+        ),
 
         Node(
             package='joy',

@@ -8,3 +8,11 @@ odometry_node:
     encoder_topic: /encoder_ticks
     odom_topic: /odom
     publish_tf: true
+
+wheel_joint_state_node:
+  ros__parameters:
+    ticks_per_revolution: 3000.0
+    encoder_topic: /encoder_ticks
+    joint_states_topic: /joint_states
+    left_joint_names: ['front_left_wheel_joint', 'back_left_wheel_joint']
+    right_joint_names: ['front_right_wheel_joint', 'back_right_wheel_joint']
