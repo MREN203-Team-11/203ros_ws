@@ -1,3 +1,8 @@
+# NOTES
+- changed encoder ticks per revolution to 6000
+- set ros domain id to 11
+- some reason robot motor not moving now
+
 # SSH
 
 `ssh group11@192.168.50.203`
