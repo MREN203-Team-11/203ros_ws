@@ -16,7 +16,7 @@ class OdometryNode(Node):
         super().__init__('odometry_node')
 
         # Parameters
-        self.declare_parameter('ticks_per_revolution', 537.6)
+        self.declare_parameter('ticks_per_revolution', 3000.0)
         self.declare_parameter('wheel_radius', 0.060325)      # meters
         self.declare_parameter('wheel_base', 0.238125)        # meters
         self.declare_parameter('odom_frame_id', 'odom')
