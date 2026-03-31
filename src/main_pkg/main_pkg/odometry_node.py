@@ -92,7 +92,7 @@ class OdometryNode(Node):
 
         # Diff-drive kinematics
         d_center = 0.5 * (d_left + d_right)
-        d_yaw = (d_right - d_left) / self.wheel_base
+        d_yaw = (d_right - d_left) / (self.wheel_base * 2)
 
         # Midpoint integration
         heading_mid = self.yaw + 0.5 * d_yaw
