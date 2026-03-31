@@ -14,17 +14,23 @@ def generate_launch_description():
 
     # Publish robot_description using the non-ros2_control xacro branch
     rsp = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([
+        PythonLaunchDescriptionSource(
             os.path.join(
                 get_package_share_directory(package_name),
                 'launch',
                 'rsp.launch.py'
             )
-        ]),
+        ),
         launch_arguments={
             'use_sim_time': 'true',
             'use_ros2_control': 'false',
         }.items()
+    )
+
+    world = os.path.join(
+        get_package_share_directory('main_pkg'),
+        'worlds',
+        'mars.world'
     )
 
     gazebo_params_file = os.path.join(
@@ -34,16 +40,17 @@ def generate_launch_description():
     )
 
     gazebo = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([
+        PythonLaunchDescriptionSource(
             os.path.join(
                 get_package_share_directory('gazebo_ros'),
                 'launch',
                 'gazebo.launch.py'
             )
-        ]),
+        ),
         launch_arguments={
-            'extra_gazebo_args': '--ros-args --params-file ' + gazebo_params_file
-        }.items()
+            'extra_gazebo_args': '--ros-args --params-file ' + gazebo_params_file,
+            'world': world
+            }.items()
     )
 
     spawn_entity = Node(

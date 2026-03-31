@@ -1,10 +1,8 @@
 # PLAN OF ACTION
-- fix left motors going before right (might just be a voltage issue)
 - Create map of room off peak hours
-- Try to implement nav2 stack with map of room
 - gazebo mars sim world
 - ros2 architecture diagrams (past report, images)
-- edit teleop_motor.launch.py to be single robot bringup, with nav2 
+- edit teleop_motor.launch.py to be single robot bringup
 - edit launch_sim.py to launch with a mars world
 
 
