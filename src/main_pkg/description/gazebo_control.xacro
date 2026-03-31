@@ -16,10 +16,10 @@
             <right_joint>back_right_wheel_joint</right_joint>
 
             <!-- One value per pair -->
-            <wheel_separation>0.2775</wheel_separation>
-            <wheel_separation>0.2775</wheel_separation>
-            <wheel_diameter>0.125</wheel_diameter>
-            <wheel_diameter>0.125</wheel_diameter>
+            <wheel_separation>0.2428</wheel_separation>
+            <wheel_separation>0.2428</wheel_separation>
+            <wheel_diameter>0.1182</wheel_diameter>
+            <wheel_diameter>0.1182</wheel_diameter>
 
             <!-- Limits -->
              <max_wheel_torque>200</max_wheel_torque>
