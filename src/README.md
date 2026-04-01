@@ -8,6 +8,14 @@
 - create rviz launch file to view robot on mars sim, and map being created
 
 
+
+
+# Project Completion:
+
+## Presentation
+run teleop_
+
+
 # SSH
 
 `ssh group11@192.168.50.203`
