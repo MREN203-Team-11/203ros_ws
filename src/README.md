@@ -8,6 +8,9 @@
 
 - potentially figure out initial pose issue in rviz
 
+- get physical robot ready
+- charge battery
+
 
 
 
