@@ -6,6 +6,8 @@
 - remap, alter map in slam_real_bot.launch.py
 - print out images in gmail, finish poster board
 
+- potentially figure out initial pose issue in rviz
+
 
 
 
