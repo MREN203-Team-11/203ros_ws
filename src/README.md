@@ -1,9 +1,11 @@
 # PLAN OF ACTION
-- Create map of room off peak hours
+- get slam map files off pi
 - gazebo mars sim world
 - ros2 architecture diagrams (past report, images)
-- edit teleop_motor.launch.py to be single robot bringup
-- edit launch_sim.py to launch with a mars world
+- edit teleop_motor.launch.py to be single robot bringup with lidar, slam localization
+- create rviz launch file to automatically view robot in room with map
+- edit launch_sim.py to launch with a mars world, and run slam mapping on environment
+- create rviz launch file to view robot on mars sim, and map being created
 
 
 # SSH
