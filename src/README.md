@@ -13,7 +13,9 @@
 # Project Completion:
 
 ## Presentation
-run teleop_
+on pi run `ros2 launch main_pkg teleop_motor.launch.py`
+
+on pc run `ros2 launch main_pkg slam_real_bot.launch.py`
 
 
 # SSH
