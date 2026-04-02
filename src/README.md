@@ -30,6 +30,8 @@ on pc run `ros2 launch main_pkg slam_real_bot.launch.py`
 
 - make sure joystick usb is plugged into pc
 
+on pc run `ros2 launch main_pkg launch_sim.launch.py`
+
 
 # SSH
 

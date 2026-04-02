@@ -13,11 +13,12 @@ def generate_launch_description():
     pkg_share = get_package_share_directory(package_name)
     teleop_params = os.path.join(pkg_share, 'config', 'teleop_joy.yaml')
     slam_params = os.path.join(pkg_share, "config", "sim_slam_params.yaml")
-    rviz_config = os.path.join(pkg_share, "config", "real_bot.rviz")
+    rviz_config = os.path.join(pkg_share, "config", "mars_sim.rviz")
 
 
     slam_params_file = LaunchConfiguration("slam_params_file")
     rviz_config_file = LaunchConfiguration("rviz_config")
+    use_sim_time = LaunchConfiguration("use_sim_time")
 
     # Publish robot_description using the non-ros2_control xacro branch
     rsp = IncludeLaunchDescription(
@@ -105,15 +106,13 @@ def generate_launch_description():
         name="rviz2",
         output="screen",
         arguments=["-d", rviz_config_file],
-        launch_arguments={
-            'use_sim_time': 'true',
-        }.items()
+        parameters=[{"use_sim_time": use_sim_time}],
     )
 
 
 
     return LaunchDescription([
-        
+
         DeclareLaunchArgument(
             "rviz_config",
             default_value=rviz_config,
@@ -125,10 +124,18 @@ def generate_launch_description():
             default_value=slam_params,
             description="Path to the slam_toolbox parameter file",
         ),
+
+        DeclareLaunchArgument(
+            "use_sim_time",
+            default_value="true",
+            description="Use simulation clock (/clock)",
+        ),
+
         rsp,
         gazebo,
         spawn_entity,
         joy_node,
         teleop_node,
-        slam_node
+        slam_node,
+        rviz_node
     ])
