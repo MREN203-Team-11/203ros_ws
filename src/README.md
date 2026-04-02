@@ -17,9 +17,18 @@
 # Project Completion:
 
 ## Presentation
+
+### Real robot
+
+- make sure joystick, serial, lidar all connected to pi
+
 on pi run `ros2 launch main_pkg teleop_motor.launch.py`
 
 on pc run `ros2 launch main_pkg slam_real_bot.launch.py`
+
+### Sim
+
+- make sure joystick usb is plugged into pc
 
 
 # SSH

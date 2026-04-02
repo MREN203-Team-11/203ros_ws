@@ -2,7 +2,8 @@ import os
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
+from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
@@ -15,6 +16,16 @@ def generate_launch_description():
     use_sim_time = LaunchConfiguration("use_sim_time")
     slam_params_file = LaunchConfiguration("slam_params_file")
     rviz_config_file = LaunchConfiguration("rviz_config")
+
+    rsp = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            [os.path.join(pkg_share, "launch", "rsp.launch.py")]
+        ),
+        launch_arguments={
+            "use_sim_time": use_sim_time,
+            "use_ros2_control": "true",
+        }.items(),
+    )
 
     slam_node = Node(
         package="slam_toolbox",
@@ -53,6 +64,7 @@ def generate_launch_description():
                 default_value=rviz_config,
                 description="Path to the RViz configuration file",
             ),
+            rsp,
             slam_node,
             rviz_node,
         ]

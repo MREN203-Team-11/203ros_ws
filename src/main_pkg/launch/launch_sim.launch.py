@@ -2,15 +2,22 @@ import os
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription
+from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
+from launch.substitutions import LaunchConfiguration
 
 
 def generate_launch_description():
     package_name = 'main_pkg'
     pkg_share = get_package_share_directory(package_name)
     teleop_params = os.path.join(pkg_share, 'config', 'teleop_joy.yaml')
+    slam_params = os.path.join(pkg_share, "config", "sim_slam_params.yaml")
+    rviz_config = os.path.join(pkg_share, "config", "real_bot.rviz")
+
+
+    slam_params_file = LaunchConfiguration("slam_params_file")
+    rviz_config_file = LaunchConfiguration("rviz_config")
 
     # Publish robot_description using the non-ros2_control xacro branch
     rsp = IncludeLaunchDescription(
@@ -56,7 +63,11 @@ def generate_launch_description():
     spawn_entity = Node(
         package='gazebo_ros',
         executable='spawn_entity.py',
-        arguments=['-topic', 'robot_description', '-entity', 'my_bot'],
+        arguments=['-topic', 'robot_description', '-entity', 'my_bot',
+                   '-x', '18.0',
+                   '-y', '0.0',
+                   '-z', '5.0',
+                ],
         output='screen'
     )
 
@@ -80,10 +91,44 @@ def generate_launch_description():
         parameters=[teleop_params]
     )
 
+    slam_node = Node(
+        package="slam_toolbox",
+        executable="async_slam_toolbox_node",
+        name="slam_toolbox",
+        output="screen",
+        parameters=[slam_params_file],  
+    )
+
+    rviz_node = Node(
+        package="rviz2",
+        executable="rviz2",
+        name="rviz2",
+        output="screen",
+        arguments=["-d", rviz_config_file],
+        launch_arguments={
+            'use_sim_time': 'true',
+        }.items()
+    )
+
+
+
     return LaunchDescription([
+        
+        DeclareLaunchArgument(
+            "rviz_config",
+            default_value=rviz_config,
+            description="Path to the RViz configuration file",
+        ),
+
+        DeclareLaunchArgument(
+            "slam_params_file",
+            default_value=slam_params,
+            description="Path to the slam_toolbox parameter file",
+        ),
         rsp,
         gazebo,
         spawn_entity,
         joy_node,
         teleop_node,
+        slam_node
     ])
