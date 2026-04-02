@@ -1,7 +1,4 @@
 # PLAN OF ACTION
-- gazebo mars sim world
-- edit launch_sim.py to launch with a mars world, and run slam mapping on environment
-- create rviz launch file to view robot on mars sim, and map being created
 
 - remap, alter map in slam_real_bot.launch.py
 - print out images in gmail, finish poster board
@@ -21,6 +18,7 @@
 ### Real robot
 
 - make sure joystick, serial, lidar all connected to pi
+- turn on motor driver
 
 on pi run `ros2 launch main_pkg teleop_motor.launch.py`
 
